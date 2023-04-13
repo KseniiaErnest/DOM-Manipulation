@@ -6,18 +6,26 @@ console.log('INDEX.JS connected');
 document.querySelector('#new-task-form').addEventListener('submit', e => {
   e.preventDefault();
 
-  const userInput = document.querySelector('#task-input');
-  const userName = document.querySelector('#owner-input');
-  
-  userInput.innerText = userInput.value;
-  
-  // 1: get the input from user related to the new task and the owner of the task
+ // 1: get the input from user related to the new task and the owner of the task
   
   // 2: append it to the DOM
   
   // 3: clear the form after the submission
   
-  // ... your code here
+  const userInput = document.querySelector('#task-input');
+  const userName = document.querySelector('#owner-input');
+
+  const item = document.createElement('li');
+  const item2 = document.createElement('p');
+  item.innerText = userInput.value;
+  item2.innerText = userName.value;
+
+  const ulTask = document.querySelector('#tasks-list');
+  ulTask.appendChild(item);
+  ulTask.appendChild(item2);
+
+  userInput.value = '';
+  userName.value = '';
   
 });
 
