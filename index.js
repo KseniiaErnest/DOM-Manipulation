@@ -37,3 +37,18 @@ document.querySelector('#new-task-form').addEventListener('submit', e => {
 // 4. change the attribute source to point to 'https://giphy.com/embed/1MTLxzwvOnvmE' after clicking on the 'Update gif' button
 
 // 5: bonus: make it so every time you  click on the 'Update gif' button, a different gif (one of these two) appears
+
+const btn = document.querySelector('#update-button');
+
+btn.addEventListener('click', () => {
+  const iframeTag = document.querySelector('iframe');
+
+  const gifSrc = iframeTag.getAttribute('src');
+  
+  if (gifSrc === 'https://giphy.com/embed/MOWPkhRAUbR7i') {
+    iframeTag.setAttribute('src', 'https://giphy.com/embed/1MTLxzwvOnvmE') 
+  } else {
+    iframeTag.setAttribute('src', 'https://giphy.com/embed/MOWPkhRAUbR7i')
+  }
+})
+
